@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Sample : MonoBehaviour {
+public class SampleVelocity : MonoBehaviour {
 
     public bool m_simStart = false;
     public float m_simTime = 0f;

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Robot : MonoBehaviour {
+public class RobotVelocity : MonoBehaviour {
 
     //制御パラメータ
     public float m_v = 5f; //並進速度　速度
@@ -46,10 +46,10 @@ public class Robot : MonoBehaviour {
             //シミュレーション用の個体を追加
             GameObject sampleObj = Instantiate(
                 m_sampleObjPrefab, 
-                transform.position, 
+                transform.position + Vector3.back, 
                 transform.rotation) as GameObject;
             //シミュレーションを開始
-            sampleObj.GetComponent<Sample>().Simulation(
+            sampleObj.GetComponent<SampleVelocity>().Simulation(
                 m_v, m_w, m_simTime,
                 m_a1, m_a2, m_a3, m_a4, m_a5, m_a6);
             //名前変更
@@ -69,7 +69,7 @@ public class Robot : MonoBehaviour {
                 transform.position,
                 transform.rotation) as GameObject;
             //シミュレーションを開始
-            sampleObj.GetComponent<Sample>().Simulation(
+            sampleObj.GetComponent<SampleVelocity>().Simulation(
                 m_v, m_w, m_simTime,
                 0f, 0f, 0f, 0f, 0f, 0f);
             //名前変更
@@ -86,10 +86,10 @@ public class Robot : MonoBehaviour {
                 //シミュレーション用の個体を追加
                 GameObject sampleObj = Instantiate(
                     m_sampleObjPrefab,
-                    transform.position,
+                    transform.position + Vector3.back,
                     transform.rotation) as GameObject;
                 //シミュレーションを開始
-                sampleObj.GetComponent<Sample>().Simulation(
+                sampleObj.GetComponent<SampleVelocity>().Simulation(
                     m_v, m_w, m_simTime,
                     m_a1, m_a2, m_a3, m_a4, m_a5, m_a6);
                 //名前変更
